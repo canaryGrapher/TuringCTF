@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Zotaria HQ
+    </title>
+  </head>
+  <script src="/scripting.js"></script>
+  <link rel="stylesheet" href="/styling.css" />
+  <body>
+    <div id="loginForm">
+      <h1>Zotariya HQ</h1>
+      <p>Login to the portal</p>
+      <form id="secureLogin" action="/secureLogin" method="POST">
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value=""
+          id="userAuth"
+          onclick="lightThisUP()"
+        />
+        <br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value=""
+          id="passAuth"
+          onload="changeColor()"
+        />
+        <br /><br />
+        <input
+          type="submit"
+          id="loginButton"
+          value="Login"
+          onclick="animateThis()"
+        />
+      </form>
+    </div>
+  </body>
+</html>

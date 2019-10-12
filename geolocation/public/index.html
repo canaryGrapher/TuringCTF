@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Maitri
+    </title>
+      <!-- Username: admin -->
+      <!-- Password: admin -->
+      <link rel="stylesheet" href="/styling.css" />
+  </head>
+  <body onload="getLocation()">
+    <div id="loginForm">
+      <h1></h1>
+      <p>Login to the portal</p>
+      <form id="secureLogin" action="/secureLogin" method="POST">
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value=""
+          id="userAuth"
+          onclick="lightThisUP()"
+        />
+        <br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value=""
+          id="passAuth"
+          onload="changeColor()"
+        />
+        <br /><br />
+        <input type="text" name="ltxyz" id="ltxyz" value="" />
+        <input type="text" name="lgxyz" id="lgxyz" value="" />
+        <input type="submit" id="loginButton" value="Login" />
+        <script>
+          function clean(toClean, source) {
+            if (typeof toClean !== "string") return true;
+            if (typeof source !== "string") return true;
+
+            return source.replace(toClean, String("CLEANED")).toString();
+          }
+          function zapytaj(pytanie) {
+            if (confirm(pytanie)) return true;
+            else return false;
+          }
+          function hideVPN() {
+            if (isInputEmpty()) {
+              $.ajax({
+                type: "POST",
+                data: "...",
+                url: "...",
+                success: function(result) {
+                  if (result.substring(0, 3) != "!!!") {
+                    //success
+                  } else {
+                    //faliure
+                  }
+                },
+                error: function() {}
+              });
+            }
+          }
+          function runThis() {
+            for (var j = 0; j < 10; j++) {
+              cell = document.createElement("td");
+              switch (j) {
+                case 0:
+                  var date1 = events[i];
+                  var date2 = events[i];
+                  cell.appendChild(
+                    document.createTextNode(
+                      date1.getFullYear() +
+                        "/" +
+                        date1.getMonth() +
+                        "/" +
+                        date1.getDate() +
+                        " " +
+                        date1.getHours() +
+                        ":" +
+                        date1.getMinutes() +
+                        " To " +
+                        date2.getFullYear() +
+                        "/" +
+                        date2.getMonth() +
+                        "/" +
+                        date2.getDate() +
+                        " " +
+                        date2.getHours() +
+                        ":" +
+                        date2.getMinutes()
+                    )
+                  );
+                  break;
+                case 1:
+                  cell.appendChild(document.createTextNode);
+                  break;
+                case 2:
+                  cell.appendChild(document.createTextNode);
+                  break;
+              }
+              row.appendChild(cell);
+            }
+          }
+          lat = document.getElementById("ltxyz");
+          lon = document.getElementById("lgxyz");
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+              alert("Browser Error.");
+            }
+          }
+          function showPosition(position) {
+            ltxyz.value = position.coords.latitude;
+            lgxyz.value = position.coords.longitude;
+          }
+          this.onSubmit = this.onSubmit.bind(this);
+          this.onClose = this.onClose.bind(this);
+
+          request.get_something = something_id => {
+            return new Promise((resolve, reject) => {
+              database
+                .find_all("something", {
+                  where: { something_id: something_id, is_deleted: 0 }
+                })
+                .then(function(res) {
+                  let result = {};
+                  res = JSON.stringify(res);
+                  res = JSON.parse(res);
+                  res.forEach(function(element) {
+                    if (typeof element.is_deleted != "undefined") {
+                      delete element.is_deleted;
+                    }
+                    let key = "something_" + element.id;
+                    result[key] = element;
+                  });
+                  resolve(result);
+                }, reject);
+            });
+          };
+          var move = 0;
+          var kier = 0;
+          var pic = 0;
+          var rol = 0;
+
+          var rol2 = 171;
+          var rol3 = 343;
+          var rol4 = 514;
+          var rol2_cel = 171;
+          var rol3_cel = 343;
+          var rol4_cel = 514;
+
+          function onpic(p) {
+            pic = p;
+          }
+
+          function offpic(p) {
+            if (pic == p) pic = 0;
+          }
+
+          function next() {
+            if (move < 40) move = 40;
+            kier = 0;
+          }
+          function prev() {
+            if (move < 40) move = 60;
+            kier = 1;
+          }
+          function set() {
+            document.getElementById("ba1").style.left = 0;
+            document.getElementById("ba2").style.left = rol2;
+            document.getElementById("ba3").style.left = rol3;
+            document.getElementById("ba4").style.left = rol4;
+          }
+
+          function SetOpacity(object, opacityPct) {
+            // IE.
+            object.style.filter = "alpha(opacity=" + opacityPct + ")";
+            // Old mozilla and firefox
+            object.style.MozOpacity = opacityPct / 100;
+            // Everything else.
+            object.style.opacity = opacityPct / 100;
+          }
+
+          var randtim = new Array(
+            110,
+            103,
+            130,
+            125,
+            108,
+            118,
+            112,
+            122,
+            101,
+            100
+          );
+          var showtimer = 0;
+          var showpic = 1;
+
+          function Animuj() {
+            if (pic == 0) {
+              rol2_cel = 171;
+              rol3_cel = 343;
+              rol4_cel = 514;
+            } else if (pic == 1) {
+              rol2_cel = 342;
+              rol3_cel = 457;
+              rol4_cel = 571;
+            } else if (pic == 2) {
+              rol2_cel = 115;
+              rol3_cel = 457;
+              rol4_cel = 571;
+            } else if (pic == 3) {
+              rol2_cel = 114;
+              rol3_cel = 229;
+              rol4_cel = 571;
+            } else if (pic == 4) {
+              rol2_cel = 114;
+              rol3_cel = 228;
+              rol4_cel = 344;
+            }
+            var a = (rol2 - rol2_cel) / 10;
+            if (a < -0.1 && a > -1) a = -1;
+            if (a > 0.1 && a < 1) a = 1;
+            if (rol2 != rol2_cel) rol2 -= a;
+            var a = (rol3 - rol3_cel) / 10;
+            if (a < -0.1 && a > -1) a = -1;
+            if (a > 0.1 && a < 1) a = 1;
+            if (rol3 != rol3_cel) rol3 -= a;
+            var a = (rol4 - rol4_cel) / 10;
+            if (a < -0.1 && a > -1) a = -1;
+            if (a > 0.1 && a < 1) a = 1;
+            if (rol4 != rol4_cel) rol4 -= a;
+            set();
+            document.getElementById("ba2").style.left = rol2;
+
+            showtimer += 1;
+            if (showtimer > 100) {
+              for (st = 0; st < 9; ++st) {
+                if (showtimer == randtim[st]) {
+                  SetOpacity(document.getElementById("ps" + st), 0);
+                  document.getElementById("ps" + st).style.backgroundImage =
+                    "url('cs/log" + showpic + ".jpg')";
+                }
+                if (showtimer == randtim[st] + 1)
+                  SetOpacity(document.getElementById("ps" + st), 20);
+                if (showtimer == randtim[st] + 2)
+                  SetOpacity(document.getElementById("ps" + st), 40);
+                if (showtimer == randtim[st] + 3)
+                  SetOpacity(document.getElementById("ps" + st), 60);
+                if (showtimer == randtim[st] + 4)
+                  SetOpacity(document.getElementById("ps" + st), 80);
+                if (showtimer == randtim[st] + 5) {
+                  document.getElementById("pn" + st).style.backgroundImage =
+                    "url('cs/log" + showpic + ".jpg')";
+                  SetOpacity(document.getElementById("ps" + st), 0);
+                }
+              }
+              if (showtimer > 150) {
+                showtimer = 0;
+                for (st = 0; st < 9; ++st)
+                  randtim[st] = Math.floor(Math.random() * 26) + 100;
+                showpic += 1;
+                if (showpic > 2) showpic = 0;
+              }
+            }
+          }
+
+          window.setInterval("Animuj()", 50);
+        </script>
+      </form>
+    </div>
+  </body>
+</html>

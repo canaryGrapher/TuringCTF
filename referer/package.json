@@ -1,0 +1,25 @@
+{
+  "name": "zotaria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/var-greyShader/geolocation.git"
+  },
+  "engines": {
+    "node": "12.6.0",
+    "npm": "6.9.0"
+  },
+  "author": "Turing",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.0.0",
+    "inbound": "0.0.6",
+    "nodemon": "^1.19.3"
+  }
+}

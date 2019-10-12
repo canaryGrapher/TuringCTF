@@ -1,0 +1,36 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(214, 208, 194);
+  font-size: 130%;
+}
+
+#oldAndNew {
+  font-size: 135%;
+  font-weight: 500;
+}
+
+#infoOnMonkeys {
+  width: 45vw;
+  margin-left: 3vw;
+}
+
+#titleMon {
+  text-align: center;
+}
+
+#allContent {
+  display: flex;
+}
+
+#imgMonkey {
+  background-image: url("/resources/monkeyHi.jpg");
+  width: 50vw;
+  height: 95vh;
+  background-size: cover;
+  margin-left: 1vw;
+}
